@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.bpmn2.modeler.examples.customtask/src"
+    modelPluginID="org.eclipse.bpmn2.modeler.examples.customtask" templateDirectory=""
+    redirection="" forceOverwrite="true" modelName="MyModel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.eclipse.bpmn2/model/BPMN20.genmodel#//bpmn2 ../../org.eclipse.bpmn2/model/BPMN20.genmodel#//di ../../org.eclipse.bpmn2/model/BPMN20.genmodel#//di.1 ../../org.eclipse.bpmn2/model/BPMN20.genmodel#//dc">
+  <foreignModel>MyModel.ecore</foreignModel>
+  <genPackages prefix="MyModel" basePackage="org.eclipse.bpmn2.modeler.examples.customtask"
+      resource="XML" disposableProviderFactory="true" fileExtensions="bpmn" ecorePackage="MyModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//SeperateData">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//SeperateData/SeperateDataIntoTrainingAndTesting"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//SeperateData/SeperateDataIntoTrainingValidationAndTesting"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//SeperateData/TESSeparateData"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//TypeAlgorithme">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/NaiveBayes"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/SVM"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/BayesianNetwork"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/DescionTree"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/NeuralNetwork"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/MultiClassClassification"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/MultiLabelClassification"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/RegressionAlgorithms"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//TypeAlgorithme/ClusteringAlgorithms"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//Sampling">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//Sampling/OverSampling"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//Sampling/UnderSampling"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//NeutralClass">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//NeutralClass/ADDNeutralClass"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//CrossUncorrelatedFeatures">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//CrossUncorrelatedFeatures/CrossUncorrelatedFeatures"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//YesNo">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//YesNo/Yes"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//YesNo/No"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//PlusGandPlusPetitMille">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//PlusGandPlusPetitMille/PlusGrand_1000"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//PlusGandPlusPetitMille/PlusPetit_1000"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//ProblemType">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//ProblemType/Classification"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//ProblemType/Regression"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//ProblemType/Clustering"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//HighModerateLow">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//HighModerateLow/High"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//HighModerateLow/Moderate"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//HighModerateLow/Low"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//DataType/Categorial"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//DataType/Continue"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//PlusGandEgalDeux">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//PlusGandEgalDeux/PlusGrand_2"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//PlusGandEgalDeux/Egal_2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MyModel.ecore#//PlusGandEgalUn">
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//PlusGandEgalUn/PlusGrand_1"/>
+      <genEnumLiterals ecoreEnumLiteral="MyModel.ecore#//PlusGandEgalUn/Egal_1"/>
+    </genEnums>
+    <genClasses ecoreClass="MyModel.ecore#//DocumentRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyModel.ecore#//DocumentRoot/taskConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyModel.ecore#//DocumentRoot/temporalDependency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyModel.ecore#//DocumentRoot/metaData"/>
+    </genClasses>
+    <genClasses ecoreClass="MyModel.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Parameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Parameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MyModel.ecore#//MetaData">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute MyModel.ecore#//MetaData/mixed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//MetaData/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//MetaData/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MyModel.ecore#//TaskConfig">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/Algorithm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/SeperateData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/Sampling"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/NeutralClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/CrossUncorrelatedFeatures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyModel.ecore#//TaskConfig/criterias"/>
+    </genClasses>
+    <genClasses ecoreClass="MyModel.ecore#//MyEventDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//MyEventDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MyModel.ecore#//TemporalDependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyModel.ecore#//TemporalDependency/sourceRef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MyModel.ecore#//TemporalDependency/targetRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TemporalDependency/lagTime"/>
+    </genClasses>
+    <genClasses ecoreClass="MyModel.ecore#//Criterias">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/Overfitting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/ImbalancedDataSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/MinoryClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/ProblemType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/ConfidentialyDataLableled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/Accuracy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/DataType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/SpeedOfTraining"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/LabeledData"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/NmberOfLabelsByClasse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/NumberOfClasses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/SmallDataSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/HighTrainingSpeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//Criterias/Explainable"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
