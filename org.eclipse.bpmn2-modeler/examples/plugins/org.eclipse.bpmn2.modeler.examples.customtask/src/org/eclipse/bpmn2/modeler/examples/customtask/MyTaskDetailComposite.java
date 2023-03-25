@@ -57,11 +57,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.swt.widgets.Composite;
-
-import com.resources.ConnectionClass;
-import com.resources.Criteria;
-import com.resources.Query;
-
+ 
 public class MyTaskDetailComposite extends DefaultDetailComposite {
 	final static EStructuralFeature METADATA_FEATURE = MyModelPackage.eINSTANCE.getDocumentRoot_TaskConfig();
 
@@ -145,7 +141,7 @@ public class MyTaskDetailComposite extends DefaultDetailComposite {
 
 			String[] firstLine = br.readLine().split(";");
 
-			Criteria criteria = new Criteria();
+			resources.Criteria criteria = new resources.Criteria();
 
 			// Process the query results
 			criteria.setId(Integer.parseInt(firstLine[0]));

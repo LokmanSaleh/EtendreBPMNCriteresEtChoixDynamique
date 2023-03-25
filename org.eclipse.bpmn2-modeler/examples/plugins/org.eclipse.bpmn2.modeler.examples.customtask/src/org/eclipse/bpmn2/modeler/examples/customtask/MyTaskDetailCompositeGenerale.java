@@ -57,11 +57,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.swt.widgets.Composite;
-
-import com.resources.ConnectionClass;
-import com.resources.Criteria;
-import com.resources.Query;
-
+ 
 public class MyTaskDetailCompositeGenerale extends DefaultDetailComposite {
 
 	final static EClass METADATA_CLASS = MyModelPackage.eINSTANCE.getTaskConfig();

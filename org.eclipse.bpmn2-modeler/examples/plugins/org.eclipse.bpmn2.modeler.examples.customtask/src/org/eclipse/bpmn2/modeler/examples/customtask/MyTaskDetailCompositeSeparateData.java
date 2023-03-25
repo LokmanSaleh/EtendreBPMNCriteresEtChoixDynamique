@@ -51,10 +51,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.swt.widgets.Composite;
 
-import com.resources.ConnectionClass;
-import com.resources.Criteria;
-import com.resources.Query;
-
+import resources.Criteria;
+ 
 public class MyTaskDetailCompositeSeparateData extends DefaultDetailComposite {
 
 	public MyTaskDetailCompositeSeparateData(AbstractBpmn2PropertySection section) {
