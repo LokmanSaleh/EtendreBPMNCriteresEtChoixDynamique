@@ -19,7 +19,7 @@
 	<extension point="org.eclipse.bpmn2.modeler.runtime">
 		<runtime name="Sample Runtime - with EMF model"
 			id="org.eclipse.bpmn2.modeler.examples.customtask.runtime"
-			class="org.eclipse.bpmn2.modeler.examples.customtask.MyRuntimeExtension"
+			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyRuntimeExtension"
 			description="BPMN2 Modeler Sample Runtime using EMF model extensions">
 		</runtime>
 
@@ -93,7 +93,7 @@
 		<customTask
 			category="My Tools"
 			description="This is a Custom Task that has been extended with runtime-specific configuration parameters. These parameters are defined in the &quot;My Task&quot; Property Tab"
-			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.MyTaskFeatureContainer"
+			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskFeatureContainer"
 			icon="MyTask.png"
 			id="org.eclipse.bpmn2.modeler.examples.customtask.customTask1"
 			name="My Task"
@@ -105,7 +105,7 @@
 		</customTask> 
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab"
-			class="org.eclipse.bpmn2.modeler.examples.customtask.MyTaskPropertySection"
+			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySection"
 			label="My Task"
 			type="org.eclipse.bpmn2.Task"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">
@@ -123,7 +123,7 @@
 		<customTask
 			category="My Tools"
 			description="This is a Custom Task that has been extended with runtime-specific configuration parameters. These parameters are defined in the &quot;My Task&quot; Property Tab"
-			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.MyTaskFeatureContainerSeparateData"
+			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskFeatureContainerSeparateData"
 			icon="MyTask.png"
 			id="org.eclipse.bpmn2.modeler.examples.customtask.customTask1.separateData"
 			name="separateData"
@@ -135,7 +135,7 @@
 		</customTask> 
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.separateData"
-			class="org.eclipse.bpmn2.modeler.examples.customtask.MyTaskPropertySectionSeparateData"
+			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySectionSeparateData"
 			label="separateData"
 			type="org.eclipse.bpmn2.Task"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">
@@ -146,7 +146,7 @@
 		
 		
 		<propertyTab
-        class="org.eclipse.bpmn2.modeler.examples.customtask.MyTaskPropertySectionGenerale"
+        class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySectionGenerale"
         id="org.eclipse.bpmn2.modeler.examples.customtask.description.tab2"
         label="General2"
         popup="true"

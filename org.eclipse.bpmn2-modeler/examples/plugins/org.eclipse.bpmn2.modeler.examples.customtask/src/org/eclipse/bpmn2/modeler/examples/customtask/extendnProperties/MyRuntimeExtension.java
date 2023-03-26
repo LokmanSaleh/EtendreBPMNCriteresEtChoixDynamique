@@ -8,7 +8,7 @@
  * Contributors:
  * 	Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.eclipse.bpmn2.modeler.examples.customtask;
+package org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties;
 
 import org.eclipse.bpmn2.modeler.core.utils.ModelUtil.Bpmn2DiagramType;
 import org.eclipse.bpmn2.modeler.ui.AbstractBpmn2RuntimeExtension;

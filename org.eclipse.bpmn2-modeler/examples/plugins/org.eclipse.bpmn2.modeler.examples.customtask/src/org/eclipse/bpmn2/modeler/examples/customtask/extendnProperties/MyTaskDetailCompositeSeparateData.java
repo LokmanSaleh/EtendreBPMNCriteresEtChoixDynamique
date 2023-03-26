@@ -11,7 +11,7 @@
  * @author Bob Brodt
  ******************************************************************************/
 
-package org.eclipse.bpmn2.modeler.examples.customtask;
+package org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

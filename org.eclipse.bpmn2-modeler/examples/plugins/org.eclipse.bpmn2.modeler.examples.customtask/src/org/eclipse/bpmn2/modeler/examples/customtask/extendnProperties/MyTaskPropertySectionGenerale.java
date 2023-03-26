@@ -8,27 +8,28 @@
  * Contributors:
  * 	Red Hat, Inc. - initial API and implementation
  ******************************************************************************/
-package org.eclipse.bpmn2.modeler.examples.customtask;
+package org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties;
 
 import org.eclipse.bpmn2.modeler.core.merrimac.clad.AbstractDetailComposite;
 import org.eclipse.bpmn2.modeler.core.merrimac.clad.DefaultPropertySection;
+import org.eclipse.bpmn2.modeler.examples.customtask.MyTaskDetailCompositeGenerale;
 import org.eclipse.swt.widgets.Composite;
 
-public class MyTaskPropertySectionSeparateData extends DefaultPropertySection {
+public class MyTaskPropertySectionGenerale extends DefaultPropertySection {
 
-	public MyTaskPropertySectionSeparateData() {
+	public MyTaskPropertySectionGenerale() {
 		super();
 	}
 
 	@Override
 	protected AbstractDetailComposite createSectionRoot() {
 		// This constructor is used to create the detail composite for use in the Property Viewer.
-		return new MyTaskDetailCompositeSeparateData(this);
+		return new MyTaskDetailCompositeGenerale(this);
 	}
 
 	@Override
 	public AbstractDetailComposite createSectionRoot(Composite parent, int style) {
 		// This constructor is used to create the detail composite for use in the popup Property Dialog.
-		return new MyTaskDetailCompositeSeparateData(parent, style);
+		return new MyTaskDetailCompositeGenerale(parent, style);
 	}
 }
