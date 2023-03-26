@@ -96,7 +96,7 @@
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskFeatureContainer"
 			icon="MyTask.png"
 			id="org.eclipse.bpmn2.modeler.examples.customtask.customTask1"
-			name="My Task"
+			name="Construire un modèle"
 			propertyTabs="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime"
 			type="Task">
@@ -106,7 +106,7 @@
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab"
 			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySection"
-			label="My Task"
+			label="Choisissez algo pour coustruire"
 			type="org.eclipse.bpmn2.Task"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">
 		</propertyTab>
@@ -126,7 +126,7 @@
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskFeatureContainerSeparateData"
 			icon="MyTask.png"
 			id="org.eclipse.bpmn2.modeler.examples.customtask.customTask1.separateData"
-			name="separateData"
+			name="Séparez les données"
 			propertyTabs="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.separateData"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime"
 			type="Task">
@@ -136,7 +136,7 @@
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.separateData"
 			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySectionSeparateData"
-			label="separateData"
+			label="Choisissez algo pour séparer"
 			type="org.eclipse.bpmn2.Task"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">
 		</propertyTab>
@@ -148,7 +148,7 @@
 		<propertyTab
         class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySectionGenerale"
         id="org.eclipse.bpmn2.modeler.examples.customtask.description.tab2"
-        label="General2"
+        label="Critères de sélection"
         popup="true"
         runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime"
         type="org.eclipse.bpmn2.Process">

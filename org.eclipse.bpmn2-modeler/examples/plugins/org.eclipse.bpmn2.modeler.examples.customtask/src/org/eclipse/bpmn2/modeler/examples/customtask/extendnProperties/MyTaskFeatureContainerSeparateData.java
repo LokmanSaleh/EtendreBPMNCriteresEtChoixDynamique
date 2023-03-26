@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties;
 
+import org.eclipse.bpmn2.Task;
 import org.eclipse.bpmn2.modeler.core.features.CustomShapeFeatureContainer;
 import org.eclipse.bpmn2.modeler.core.features.ShowPropertiesFeature;
 import org.eclipse.bpmn2.modeler.core.model.ModelDecorator;
@@ -38,6 +39,8 @@ public class MyTaskFeatureContainerSeparateData extends CustomShapeFeatureContai
 		EStructuralFeature f = ModelDecorator.getAnyAttribute(object, "type");
 		if (f!=null) {
 			Object id = object.eGet(f);
+			Task task = (Task)object;
+			//task.setName("SeparateData " + task.getId());
 			if (TYPE_VALUE.equals(id))
 				return CUSTOM_TASK_ID;
 		}
@@ -50,4 +53,6 @@ public class MyTaskFeatureContainerSeparateData extends CustomShapeFeatureContai
 	public ICustomFeature[] getCustomFeatures(IFeatureProvider fp) {
 		return new ICustomFeature[] {new ShowPropertiesFeature(fp)};
 	}
+	
+
 }
