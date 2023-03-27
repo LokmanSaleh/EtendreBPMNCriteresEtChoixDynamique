@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
@@ -373,14 +374,14 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MyModelPackage.TASK_CONFIG__ALGORITHM:
-				setAlgorithm((TypeAlgorithme)newValue);
+				setAlgorithm(TypeAlgorithme.get(((Enumerator)newValue).getValue()));
 				return;
 			case MyModelPackage.TASK_CONFIG__SEPERATE_DATA:
 				setSeperateData((SeperateData)newValue);

@@ -90,7 +90,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CLUSTERING_ALGORITHMS(8, "ClusteringAlgorithms", "ClusteringAlgorithms");
+	CLUSTERING_ALGORITHMS(8, "ClusteringAlgorithms", "ClusteringAlgorithms") ;
 
 	/**
 	 * The '<em><b>Naive Bayes</b></em>' literal value.
@@ -101,7 +101,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NAIVE_BAYES_VALUE = 0;
+	public static final  int NAIVE_BAYES_VALUE = 0;
 
 	/**
 	 * The '<em><b>SVM</b></em>' literal value.
@@ -145,7 +145,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NEURAL_NETWORK_VALUE = 4;
+	public static final  int NEURAL_NETWORK_VALUE = 4;
 
 	/**
 	 * The '<em><b>Multi Class Classification</b></em>' literal value.
@@ -197,7 +197,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final  TypeAlgorithme[] VALUES_ARRAY =
+	private static   TypeAlgorithme[] VALUES_ARRAY =
 		new TypeAlgorithme[] {
 			NAIVE_BAYES,
 			SVM,
@@ -239,7 +239,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<TypeAlgorithme> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static  List<TypeAlgorithme> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Type Algorithme</b></em>' literal with the specified literal value.
@@ -284,21 +284,21 @@ public enum TypeAlgorithme implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private final int value;
+	private  int value;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private final String name;
+	private  String name;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private final String literal;
+	private  String literal;
 
 	/**
 	 * Only this class can construct instances.

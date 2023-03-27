@@ -102,6 +102,10 @@
 			type="Task">
 			<property name="type" value="MyTask" />
 			<property name="taskConfig" label="Task Configuration" type="TaskConfig"/>
+<!--   <property-->
+<!--         label="Selectable Combo Field Editor"-->
+<!--         name="selectableComboFieldEditor"-->
+<!--         type="SelectableComboFieldEditor"/>-->
 		</customTask> 
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab"
@@ -252,7 +256,19 @@
        <enable
              object="YesNo">
        </enable>
-		   
+       <enable
+             object="Gender">
+       </enable>
+       <enable
+             object="gender">
+       </enable>
+		          <enable
+             object="id">
+       </enable>       <enable
+             object="name">
+       </enable>       <enable
+             object="type">
+       </enable>
 		</modelEnablement>
 
 	</extension>
