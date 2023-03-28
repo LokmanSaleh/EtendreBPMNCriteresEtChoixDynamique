@@ -97,7 +97,7 @@ public class MyDescriptionPropertySection2 extends DescriptionPropertySection {
 			super.createBindings(be);
 			// in our example, all BaseElements may have a MetaData extension element
 			if (be instanceof BaseElement)
-				bindMetaData2((BaseElement)be);
+				bindMetaData((BaseElement)be);
 			   
 		} 
 		protected void bindMetaData2(final BaseElement be) {

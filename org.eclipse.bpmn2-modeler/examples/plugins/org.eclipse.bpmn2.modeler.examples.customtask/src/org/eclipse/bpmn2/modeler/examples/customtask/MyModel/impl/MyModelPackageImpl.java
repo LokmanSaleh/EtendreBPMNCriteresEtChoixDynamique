@@ -28,13 +28,21 @@ import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TypeAlgorithme;
 import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.YesNo;
 import org.eclipse.dd.dc.DcPackage;
 import org.eclipse.dd.di.DiPackage;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import java.io.IOException;
 import java.sql.*;
 /**
  * <!-- begin-user-doc -->
@@ -939,7 +947,128 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.MULTI_CLASS_CLASSIFICATION);
 		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.MULTI_LABEL_CLASSIFICATION);
 		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.REGRESSION_ALGORITHMS);
-		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.CLUSTERING_ALGORITHMS);
+		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.CLUSTERING_ALGORITHMS); 
+		
+		
+		// Define the EEnum
+//		EEnum enumer = (EEnum) EPackage.Registry.INSTANCE
+//				.getEPackage("http://org.eclipse.bpmn2.modeler.examples.customtask")
+//				.getEClassifier("TypeAlgorithme");
+//
+//		// Associate the EEnum with the Java enumeration class
+//		enumer.setInstanceClassName("org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TypeAlgorithme");
+//
+//		
+//		// Add EEnumLiterals to the EEnum
+//		EEnumLiteral naiveBayesLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+//		naiveBayesLiteral.setName("NAIVE_BAYES");
+//		naiveBayesLiteral.setValue(0);
+//		enumer.getELiterals().add(naiveBayesLiteral);
+//
+//		EEnumLiteral decisionTreeLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+//		decisionTreeLiteral.setName("DECISION_TREE");
+//		decisionTreeLiteral.setValue(1);
+//		enumer.getELiterals().add(decisionTreeLiteral);
+//		
+		
+		
+		
+		
+		
+		
+		
+//		
+//		EEnumLiteral newLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+//
+//		// Set the name and value of the new EEnumLiteral
+//		newLiteral.setName("NEW_LITERAL_NAME");
+//		newLiteral.setValue(enumer.getELiterals().size() );
+//		newLiteral.setLiteral("NEW_LITERAL_NAME");
+//
+//		// Add the new EEnumLiteral to the EEnum
+//		enumer.getELiterals().add(newLiteral);
+
+		
+		
+		
+		
+//		// Obtain the resource containing the model
+//		ResourceSet resourceSet = new ResourceSetImpl();
+//		Resource resource = resourceSet.getResource(URI.createURI("http://org.eclipse.bpmn2.modeler.examples.customtask"), true);
+//
+//		// Make some modifications to the model
+//
+//		// Save the changes to the resource
+//		try {
+////			enumer.eResource().save(Collections.emptyMap());
+//		    resource.save(null);
+//		} catch (IOException e) {
+//		    // Handle the exception
+//		}
+//		
+//		
+//		// Define the EEnum
+//		EEnum typeAlgorithmeEEnum = EcoreFactory.eINSTANCE.createEEnum();
+//		typeAlgorithmeEEnum.setName("TypeAlgorithme");
+//
+//		// Associate the EEnum with the Java enumeration class
+//		typeAlgorithmeEEnum.setInstanceClassName("org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TypeAlgorithme");
+//
+//		
+//		// Add EEnumLiterals to the EEnum
+//		EEnumLiteral naiveBayesLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+//		naiveBayesLiteral.setName("NAIVE_BAYES");
+//		naiveBayesLiteral.setValue(0);
+//		typeAlgorithmeEEnum.getELiterals().add(naiveBayesLiteral);
+//
+//		EEnumLiteral decisionTreeLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+//		decisionTreeLiteral.setName("DECISION_TREE");
+//		decisionTreeLiteral.setValue(1);
+//		typeAlgorithmeEEnum.getELiterals().add(decisionTreeLiteral);
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+////		
+////		EEnumLiteral newLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+////
+////		// Set the name and value of the new EEnumLiteral
+////		newLiteral.setName("NEW_LITERAL_NAME");
+////		newLiteral.setValue(enumer.getELiterals().size() );
+////		newLiteral.setLiteral("NEW_LITERAL_NAME");
+////
+////		// Add the new EEnumLiteral to the EEnum
+////		enumer.getELiterals().add(newLiteral);
+//
+//		
+//		
+//		
+//		
+////		// Obtain the resource containing the model
+//		ResourceSet resourceSet = new ResourceSetImpl();
+//		Resource resource = resourceSet.getResource(URI.createURI("http://org.eclipse.bpmn2.modeler.examples.customtask"), true);
+//
+//		// Make some modifications to the model
+//
+//		// Save the changes to the resource
+//		try {
+////			enumer.eResource().save(Collections.emptyMap());
+//		    resource.save(null);
+//		} catch (IOException e) {
+//		    // Handle the exception
+//		}
+//		
+		
+		
+		
+		
+		
+		
+		
 
 		initEEnum(samplingEEnum, Sampling.class, "Sampling");
 		addEEnumLiteral(samplingEEnum, Sampling.OVER_SAMPLING);
