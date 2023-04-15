@@ -84,6 +84,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/NeutralClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/CrossUncorrelatedFeatures"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyModel.ecore#//TaskConfig/criterias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//TaskConfig/AlgorithmNameStr"/>
     </genClasses>
     <genClasses ecoreClass="MyModel.ecore#//MyEventDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyModel.ecore#//MyEventDefinition/value"/>

@@ -68,6 +68,7 @@ public class TaskConfigItemProvider
 			addSamplingPropertyDescriptor(object);
 			addNeutralClassPropertyDescriptor(object);
 			addCrossUncorrelatedFeaturesPropertyDescriptor(object);
+			addAlgorithmNameStrPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -183,6 +184,28 @@ public class TaskConfigItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Algorithm Name Str feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAlgorithmNameStrPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TaskConfig_AlgorithmNameStr_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TaskConfig_AlgorithmNameStr_feature", "_UI_TaskConfig_type"),
+				 MyModelPackage.Literals.TASK_CONFIG__ALGORITHM_NAME_STR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -231,8 +254,7 @@ public class TaskConfigItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		TypeAlgorithme labelValue = ((TaskConfig)object).getAlgorithm();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((TaskConfig)object).getAlgorithmNameStr();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TaskConfig_type") :
 			getString("_UI_TaskConfig_type") + " " + label;
@@ -256,6 +278,7 @@ public class TaskConfigItemProvider
 			case MyModelPackage.TASK_CONFIG__SAMPLING:
 			case MyModelPackage.TASK_CONFIG__NEUTRAL_CLASS:
 			case MyModelPackage.TASK_CONFIG__CROSS_UNCORRELATED_FEATURES:
+			case MyModelPackage.TASK_CONFIG__ALGORITHM_NAME_STR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case MyModelPackage.TASK_CONFIG__CRITERIAS:

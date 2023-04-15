@@ -253,13 +253,22 @@ public interface MyModelPackage extends EPackage {
 	int TASK_CONFIG__CRITERIAS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Algorithm Name Str</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_CONFIG__ALGORITHM_NAME_STR = 6;
+
+	/**
 	 * The number of structural features of the '<em>Task Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_CONFIG_FEATURE_COUNT = 6;
+	int TASK_CONFIG_FEATURE_COUNT = 7;
 
 
 	/**
@@ -928,6 +937,17 @@ public interface MyModelPackage extends EPackage {
 	EReference getTaskConfig_Criterias();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getAlgorithmNameStr <em>Algorithm Name Str</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Algorithm Name Str</em>'.
+	 * @see org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getAlgorithmNameStr()
+	 * @see #getTaskConfig()
+	 * @generated
+	 */
+	EAttribute getTaskConfig_AlgorithmNameStr();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.MyEventDefinition <em>My Event Definition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1448,6 +1468,14 @@ public interface MyModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TASK_CONFIG__CRITERIAS = eINSTANCE.getTaskConfig_Criterias();
+
+		/**
+		 * The meta object literal for the '<em><b>Algorithm Name Str</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK_CONFIG__ALGORITHM_NAME_STR = eINSTANCE.getTaskConfig_AlgorithmNameStr();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.impl.MyEventDefinitionImpl <em>My Event Definition</em>}' class.

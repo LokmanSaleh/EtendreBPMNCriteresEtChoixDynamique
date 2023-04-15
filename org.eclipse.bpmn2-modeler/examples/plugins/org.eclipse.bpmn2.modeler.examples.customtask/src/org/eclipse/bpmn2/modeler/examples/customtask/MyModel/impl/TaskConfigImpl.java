@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.impl.TaskConfigImpl#getNeutralClass <em>Neutral Class</em>}</li>
  *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.impl.TaskConfigImpl#getCrossUncorrelatedFeatures <em>Cross Uncorrelated Features</em>}</li>
  *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.impl.TaskConfigImpl#getCriterias <em>Criterias</em>}</li>
+ *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.impl.TaskConfigImpl#getAlgorithmNameStr <em>Algorithm Name Str</em>}</li>
  * </ul>
  *
  * @generated
@@ -153,6 +154,26 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 	 * @ordered
 	 */
 	protected Criterias criterias;
+
+	/**
+	 * The default value of the '{@link #getAlgorithmNameStr() <em>Algorithm Name Str</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlgorithmNameStr()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ALGORITHM_NAME_STR_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlgorithmNameStr() <em>Algorithm Name Str</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlgorithmNameStr()
+	 * @generated
+	 * @ordered
+	 */
+	protected String algorithmNameStr = ALGORITHM_NAME_STR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,6 +360,29 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 	 * @generated
 	 */
 	@Override
+	public String getAlgorithmNameStr() {
+		return algorithmNameStr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAlgorithmNameStr(String newAlgorithmNameStr) {
+		String oldAlgorithmNameStr = algorithmNameStr;
+		algorithmNameStr = newAlgorithmNameStr;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MyModelPackage.TASK_CONFIG__ALGORITHM_NAME_STR, oldAlgorithmNameStr, algorithmNameStr));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MyModelPackage.TASK_CONFIG__CRITERIAS:
@@ -367,6 +411,8 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 				return getCrossUncorrelatedFeatures();
 			case MyModelPackage.TASK_CONFIG__CRITERIAS:
 				return getCriterias();
+			case MyModelPackage.TASK_CONFIG__ALGORITHM_NAME_STR:
+				return getAlgorithmNameStr();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -428,6 +474,9 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 			case MyModelPackage.TASK_CONFIG__CRITERIAS:
 				setCriterias((Criterias)null);
 				return;
+			case MyModelPackage.TASK_CONFIG__ALGORITHM_NAME_STR:
+				setAlgorithmNameStr(ALGORITHM_NAME_STR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -452,6 +501,8 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 				return crossUncorrelatedFeatures != CROSS_UNCORRELATED_FEATURES_EDEFAULT;
 			case MyModelPackage.TASK_CONFIG__CRITERIAS:
 				return criterias != null;
+			case MyModelPackage.TASK_CONFIG__ALGORITHM_NAME_STR:
+				return ALGORITHM_NAME_STR_EDEFAULT == null ? algorithmNameStr != null : !ALGORITHM_NAME_STR_EDEFAULT.equals(algorithmNameStr);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -476,6 +527,8 @@ public class TaskConfigImpl extends EObjectImpl implements TaskConfig {
 		result.append(neutralClass);
 		result.append(", CrossUncorrelatedFeatures: ");
 		result.append(crossUncorrelatedFeatures);
+		result.append(", AlgorithmNameStr: ");
+		result.append(algorithmNameStr);
 		result.append(')');
 		return result.toString();
 	}

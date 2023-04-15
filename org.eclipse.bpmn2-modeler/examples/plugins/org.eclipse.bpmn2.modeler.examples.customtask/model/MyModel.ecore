@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MyModel" nsURI="http://org.eclipse.bpmn2.modeler.examples.customtask"
+    nsPrefix="mm">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taskConfig" upperBound="-2"
+        eType="#//TaskConfig" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="taskConfig"/>
+        <details key="kind" value="element"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="temporalDependency" upperBound="-2"
+        eType="#//TemporalDependency" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="temporalDependency"/>
+        <details key="kind" value="element"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaData" upperBound="-2"
+        eType="#//MetaData" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="metaData"/>
+        <details key="kind" value="element"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaData">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="mixed"/>
+      <details key="namespace" value="##targetNamespace"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" volatile="true"
+        transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskConfig">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Algorithm" eType="#//TypeAlgorithme"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SeperateData" eType="#//SeperateData"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sampling" eType="#//Sampling"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NeutralClass" eType="#//NeutralClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CrossUncorrelatedFeatures"
+        eType="#//CrossUncorrelatedFeatures"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="criterias" upperBound="-2"
+        eType="#//Criterias" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AlgorithmNameStr" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MyEventDefinition" eSuperTypes="../../org.eclipse.bpmn2/model/BPMN20.ecore#//EventDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemporalDependency" eSuperTypes="../../org.eclipse.bpmn2/model/BPMN20.ecore#//FlowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceRef" eType="ecore:EClass ../../org.eclipse.bpmn2/model/BPMN20.ecore#//BoundaryEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetRef" eType="ecore:EClass ../../org.eclipse.bpmn2/model/BPMN20.ecore#//BoundaryEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lagTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SeperateData" instanceClassName="">
+    <eLiterals name="SeperateDataIntoTrainingAndTesting"/>
+    <eLiterals name="SeperateDataIntoTrainingValidationAndTesting" value="1"/>
+    <eLiterals name="TESSeparateData" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeAlgorithme">
+    <eLiterals name="NaiveBayes"/>
+    <eLiterals name="SVM" value="1"/>
+    <eLiterals name="BayesianNetwork" value="2"/>
+    <eLiterals name="DescionTree" value="3"/>
+    <eLiterals name="NeuralNetwork" value="4"/>
+    <eLiterals name="MultiClassClassification" value="5"/>
+    <eLiterals name="MultiLabelClassification" value="6"/>
+    <eLiterals name="RegressionAlgorithms" value="7"/>
+    <eLiterals name="ClusteringAlgorithms" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Sampling">
+    <eLiterals name="OverSampling" literal="OverSampling"/>
+    <eLiterals name="UnderSampling" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NeutralClass">
+    <eLiterals name="ADDNeutralClass" literal="ADDNeutralClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CrossUncorrelatedFeatures">
+    <eLiterals name="CrossUncorrelatedFeatures" literal="CrossUncorrelatedFeatures"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Criterias">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Overfitting" eType="#//YesNo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ImbalancedDataSet" eType="#//YesNo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MinoryClass" eType="#//PlusGandPlusPetitMille"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ProblemType" eType="#//ProblemType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ConfidentialyDataLableled"
+        eType="#//YesNo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Accuracy" eType="#//HighModerateLow"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DataType" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SpeedOfTraining" eType="#//HighModerateLow"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LabeledData" eType="#//YesNo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NmberOfLabelsByClasse"
+        eType="#//PlusGandEgalUn"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfClasses" eType="#//PlusGandEgalDeux"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SmallDataSet" eType="#//YesNo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="HighTrainingSpeed" eType="#//YesNo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Explainable" eType="#//YesNo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="YesNo">
+    <eLiterals name="Yes" value="1"/>
+    <eLiterals name="No" value="2" literal="No"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PlusGandPlusPetitMille">
+    <eLiterals name="PlusGrand_1000"/>
+    <eLiterals name="PlusPetit_1000" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProblemType">
+    <eLiterals name="Classification"/>
+    <eLiterals name="Regression" value="1"/>
+    <eLiterals name="Clustering" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HighModerateLow">
+    <eLiterals name="High"/>
+    <eLiterals name="Moderate" value="1"/>
+    <eLiterals name="Low" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="Categorial"/>
+    <eLiterals name="Continue" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PlusGandEgalDeux">
+    <eLiterals name="PlusGrand_2"/>
+    <eLiterals name="Egal_2" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PlusGandEgalUn">
+    <eLiterals name="PlusGrand_1"/>
+    <eLiterals name="Egal_1" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

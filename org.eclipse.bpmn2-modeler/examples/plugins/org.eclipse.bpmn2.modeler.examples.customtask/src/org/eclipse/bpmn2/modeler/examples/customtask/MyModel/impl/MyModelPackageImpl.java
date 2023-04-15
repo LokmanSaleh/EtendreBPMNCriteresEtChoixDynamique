@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 import java.io.IOException;
 import java.sql.*;
 /**
@@ -236,6 +237,7 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 		BpmnDiPackage.eINSTANCE.eClass();
 		DiPackage.eINSTANCE.eClass();
 		DcPackage.eINSTANCE.eClass();
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theMyModelPackage.createPackageContents();
@@ -429,6 +431,16 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 	@Override
 	public EReference getTaskConfig_Criterias() {
 		return (EReference)taskConfigEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTaskConfig_AlgorithmNameStr() {
+		return (EAttribute)taskConfigEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -811,6 +823,7 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 		createEAttribute(taskConfigEClass, TASK_CONFIG__NEUTRAL_CLASS);
 		createEAttribute(taskConfigEClass, TASK_CONFIG__CROSS_UNCORRELATED_FEATURES);
 		createEReference(taskConfigEClass, TASK_CONFIG__CRITERIAS);
+		createEAttribute(taskConfigEClass, TASK_CONFIG__ALGORITHM_NAME_STR);
 
 		myEventDefinitionEClass = createEClass(MY_EVENT_DEFINITION);
 		createEAttribute(myEventDefinitionEClass, MY_EVENT_DEFINITION__VALUE);
@@ -875,6 +888,7 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 		Bpmn2Package theBpmn2Package = (Bpmn2Package)EPackage.Registry.INSTANCE.getEPackage(Bpmn2Package.eNS_URI);
 
 		// Create type parameters
@@ -907,6 +921,7 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 		initEAttribute(getTaskConfig_NeutralClass(), this.getNeutralClass(), "NeutralClass", null, 0, 1, TaskConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskConfig_CrossUncorrelatedFeatures(), this.getCrossUncorrelatedFeatures(), "CrossUncorrelatedFeatures", null, 0, 1, TaskConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTaskConfig_Criterias(), this.getCriterias(), null, "criterias", null, 0, -2, TaskConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTaskConfig_AlgorithmNameStr(), theXMLTypePackage.getString(), "AlgorithmNameStr", null, 0, 1, TaskConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(myEventDefinitionEClass, MyEventDefinition.class, "MyEventDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMyEventDefinition_Value(), ecorePackage.getEString(), "value", null, 0, 1, MyEventDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -947,128 +962,7 @@ public class MyModelPackageImpl extends EPackageImpl implements MyModelPackage {
 		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.MULTI_CLASS_CLASSIFICATION);
 		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.MULTI_LABEL_CLASSIFICATION);
 		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.REGRESSION_ALGORITHMS);
-		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.CLUSTERING_ALGORITHMS); 
-		
-		
-		// Define the EEnum
-//		EEnum enumer = (EEnum) EPackage.Registry.INSTANCE
-//				.getEPackage("http://org.eclipse.bpmn2.modeler.examples.customtask")
-//				.getEClassifier("TypeAlgorithme");
-//
-//		// Associate the EEnum with the Java enumeration class
-//		enumer.setInstanceClassName("org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TypeAlgorithme");
-//
-//		
-//		// Add EEnumLiterals to the EEnum
-//		EEnumLiteral naiveBayesLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
-//		naiveBayesLiteral.setName("NAIVE_BAYES");
-//		naiveBayesLiteral.setValue(0);
-//		enumer.getELiterals().add(naiveBayesLiteral);
-//
-//		EEnumLiteral decisionTreeLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
-//		decisionTreeLiteral.setName("DECISION_TREE");
-//		decisionTreeLiteral.setValue(1);
-//		enumer.getELiterals().add(decisionTreeLiteral);
-//		
-		
-		
-		
-		
-		
-		
-		
-//		
-//		EEnumLiteral newLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
-//
-//		// Set the name and value of the new EEnumLiteral
-//		newLiteral.setName("NEW_LITERAL_NAME");
-//		newLiteral.setValue(enumer.getELiterals().size() );
-//		newLiteral.setLiteral("NEW_LITERAL_NAME");
-//
-//		// Add the new EEnumLiteral to the EEnum
-//		enumer.getELiterals().add(newLiteral);
-
-		
-		
-		
-		
-//		// Obtain the resource containing the model
-//		ResourceSet resourceSet = new ResourceSetImpl();
-//		Resource resource = resourceSet.getResource(URI.createURI("http://org.eclipse.bpmn2.modeler.examples.customtask"), true);
-//
-//		// Make some modifications to the model
-//
-//		// Save the changes to the resource
-//		try {
-////			enumer.eResource().save(Collections.emptyMap());
-//		    resource.save(null);
-//		} catch (IOException e) {
-//		    // Handle the exception
-//		}
-//		
-//		
-//		// Define the EEnum
-//		EEnum typeAlgorithmeEEnum = EcoreFactory.eINSTANCE.createEEnum();
-//		typeAlgorithmeEEnum.setName("TypeAlgorithme");
-//
-//		// Associate the EEnum with the Java enumeration class
-//		typeAlgorithmeEEnum.setInstanceClassName("org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TypeAlgorithme");
-//
-//		
-//		// Add EEnumLiterals to the EEnum
-//		EEnumLiteral naiveBayesLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
-//		naiveBayesLiteral.setName("NAIVE_BAYES");
-//		naiveBayesLiteral.setValue(0);
-//		typeAlgorithmeEEnum.getELiterals().add(naiveBayesLiteral);
-//
-//		EEnumLiteral decisionTreeLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
-//		decisionTreeLiteral.setName("DECISION_TREE");
-//		decisionTreeLiteral.setValue(1);
-//		typeAlgorithmeEEnum.getELiterals().add(decisionTreeLiteral);
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-////		
-////		EEnumLiteral newLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
-////
-////		// Set the name and value of the new EEnumLiteral
-////		newLiteral.setName("NEW_LITERAL_NAME");
-////		newLiteral.setValue(enumer.getELiterals().size() );
-////		newLiteral.setLiteral("NEW_LITERAL_NAME");
-////
-////		// Add the new EEnumLiteral to the EEnum
-////		enumer.getELiterals().add(newLiteral);
-//
-//		
-//		
-//		
-//		
-////		// Obtain the resource containing the model
-//		ResourceSet resourceSet = new ResourceSetImpl();
-//		Resource resource = resourceSet.getResource(URI.createURI("http://org.eclipse.bpmn2.modeler.examples.customtask"), true);
-//
-//		// Make some modifications to the model
-//
-//		// Save the changes to the resource
-//		try {
-////			enumer.eResource().save(Collections.emptyMap());
-//		    resource.save(null);
-//		} catch (IOException e) {
-//		    // Handle the exception
-//		}
-//		
-		
-		
-		
-		
-		
-		
-		
+		addEEnumLiteral(typeAlgorithmeEEnum, TypeAlgorithme.CLUSTERING_ALGORITHMS);
 
 		initEEnum(samplingEEnum, Sampling.class, "Sampling");
 		addEEnumLiteral(samplingEEnum, Sampling.OVER_SAMPLING);

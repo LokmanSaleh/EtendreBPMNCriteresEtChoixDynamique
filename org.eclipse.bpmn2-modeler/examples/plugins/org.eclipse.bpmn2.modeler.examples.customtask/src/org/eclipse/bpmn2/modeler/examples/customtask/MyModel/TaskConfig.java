@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getNeutralClass <em>Neutral Class</em>}</li>
  *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getCrossUncorrelatedFeatures <em>Cross Uncorrelated Features</em>}</li>
  *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getCriterias <em>Criterias</em>}</li>
+ *   <li>{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getAlgorithmNameStr <em>Algorithm Name Str</em>}</li>
  * </ul>
  *
  * @see org.eclipse.bpmn2.modeler.examples.customtask.MyModel.MyModelPackage#getTaskConfig()
@@ -174,5 +175,27 @@ public interface TaskConfig extends EObject {
 	 * @generated
 	 */
 	void setCriterias(Criterias value);
+
+	/**
+	 * Returns the value of the '<em><b>Algorithm Name Str</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Algorithm Name Str</em>' attribute.
+	 * @see #setAlgorithmNameStr(String)
+	 * @see org.eclipse.bpmn2.modeler.examples.customtask.MyModel.MyModelPackage#getTaskConfig_AlgorithmNameStr()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.String"
+	 * @generated
+	 */
+	String getAlgorithmNameStr();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig#getAlgorithmNameStr <em>Algorithm Name Str</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Algorithm Name Str</em>' attribute.
+	 * @see #getAlgorithmNameStr()
+	 * @generated
+	 */
+	void setAlgorithmNameStr(String value);
 
 } // TaskConfig

@@ -109,7 +109,7 @@
 		</customTask> 
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab"
-			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySection"
+			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskPropertySectionTESTS"
 			label="Choisissez algo pour coustruire"
 			type="org.eclipse.bpmn2.Task"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">

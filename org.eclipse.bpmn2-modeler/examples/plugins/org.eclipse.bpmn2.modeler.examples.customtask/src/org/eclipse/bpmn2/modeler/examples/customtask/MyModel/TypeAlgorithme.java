@@ -197,7 +197,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static   TypeAlgorithme[] VALUES_ARRAY =
+	private static final   TypeAlgorithme[] VALUES_ARRAY =
 		new TypeAlgorithme[] {
 			NAIVE_BAYES,
 			SVM,
@@ -239,7 +239,7 @@ public enum TypeAlgorithme implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static  List<TypeAlgorithme> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final  List<TypeAlgorithme> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>Type Algorithme</b></em>' literal with the specified literal value.
@@ -284,21 +284,21 @@ public enum TypeAlgorithme implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private  int value;
+	private final  int value;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private  String name;
+	private final  String name;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private  String literal;
+	private final  String literal;
 
 	/**
 	 * Only this class can construct instances.
