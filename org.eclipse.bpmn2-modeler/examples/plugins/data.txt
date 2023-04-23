@@ -1,1 +1,4 @@
-NaiveBayes;DecisionTree
+ModelConstruction;NaiveBayes;Accuracy;High;Explaination;No
+ModelConstruction;DecisionTree;Accuracy;Middle;Explaination;Yes
+SelectionCriteria;Accuracy;Middle;Low;High
+SelectionCriteria;Explanation;Yes;No
