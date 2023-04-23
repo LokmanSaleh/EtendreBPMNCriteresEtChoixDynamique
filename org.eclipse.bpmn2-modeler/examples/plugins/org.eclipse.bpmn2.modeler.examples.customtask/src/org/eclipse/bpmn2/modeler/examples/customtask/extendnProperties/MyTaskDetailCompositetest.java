@@ -1,5 +1,6 @@
 package org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.bpmn2.BaseElement;
@@ -18,6 +19,7 @@ import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.MyModelFactory;
 import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.MyModelPackage;
 import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig;
 import org.eclipse.bpmn2.modeler.ui.preferences.SelectableComboFieldEditor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -37,15 +39,19 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Widget;
+ 
+import java.io.*;
 
 public class MyTaskDetailCompositetest extends DefaultDetailComposite {
 	
 	final static EStructuralFeature METADATA_FEATURE = MyModelPackage.eINSTANCE.getDocumentRoot_TaskConfig();
 
-    private Combo algorithmCombo; 
-    private static  TaskConfig taskConfig = null;
-    Combo combo;
-    private static EObject bebe;
+    private static Combo algorithmCombo; 
+//    private static Combo combo ;
+//    private static  TaskConfig taskConfig = null;
+    private static String ConsevedChoice;
+//    private static Combo combo;
+//    private static EObject bebe;
     public MyTaskDetailCompositetest(Composite parent, int style) {
         super(parent, style);
 		
@@ -78,80 +84,67 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
 	
     @Override
     public void createBindings(EObject be) {
+    	
+
+    	try {
+    		
+    		
         super.createBindings(be);
-        bebe=be;
+        //bebe=be;
         // Create a label and a combo box for selecting an algorithm
+        
         createLabel(this, "Select algorithm:");
         algorithmCombo = new Combo(this, SWT.READ_ONLY | SWT.DROP_DOWN);
         algorithmCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
+          
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\data.txt"))) {
+        	
+            String line;
+            
+            while ((line = br.readLine()) != null) {
+            	
+                 String[] parts = line.split(";");
+                
+                for (String part : parts) {
+                	
+                	algorithmCombo.add(part);
+                    
+                }
+            }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+		//List<String> listl = test.main();
 
+//        EList<MLAlgorithmSolutionPattern>  list = BdQueries.GetdAlgorithmsByCategory(Componenets.MODEL_CONSTRUCTION.toString()).getMlalgorithmsolutionpattern();
+//        
+//        
+//        for (MLAlgorithmSolutionPattern mlsolutionAlgorithmSolutionPattern 	: list) {
+//        	algorithmCombo.add(mlsolutionAlgorithmSolutionPattern.getMlalgorithm().getName());
+//        }
+        
         // Add items to the combo box
-        algorithmCombo.add("Algorithm 1");
-        algorithmCombo.add("Algorithm 2");
-        algorithmCombo.add("Algorithm 3");
+        algorithmCombo.add("Algorithm1");
+        algorithmCombo.add("Algorithm2");
+        algorithmCombo.add("Algorithm3");
 
         // Add a selection listener to the combo box
         algorithmCombo.addSelectionListener(new SelectionListener() {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 // TODO: handle algorithm selection
-                combo = (Combo) e.widget;  
-
-//                EObject selectedObject = MyTaskDetailCompositetest.this.getBusinessObject();
-                // Call createBindings with the selected EObject
-//                createBindings(selectedObject);
-
-//                // Get the composite that contains the selected widget
-//                Composite selectedComposite = combo.getParent();
-//
-//                // Get the parent composite of the selected composite
-//                Composite parentComposite = selectedComposite.getParent();
-//
-//                // Get the BusinessObject associated with the parent composite
-//                EObject bo = BusinessObjectUtil.getBusinessObjectForSelection((ISelection) parentComposite);
-//
-//                // Check if the BusinessObject is a task
-//                if (selectedObject instanceof Task) {
-//                    Task myTask = (Task) selectedObject;
-//            		List<TaskConfig> allTaskConfigs = ModelDecorator.getAllExtensionAttributeValues(myTask, TaskConfig.class);
-//        			taskConfig = allTaskConfigs.get(0);
-//
-//                    // Do something with the task object
-//                }
-             // get the resource set
-    			ResourceSet resourceSet = new ResourceSetImpl();
-    			Resource resource = resourceSet.getResource(URI.createURI("http://org.eclipse.bpmn2.modeler.examples.customtask"), true);
-    			
-                TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(resource);
-
-                if (editingDomain == null) {
-                    editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);
-                }
-
-                editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain) {
-                    @Override
-                    protected void doExecute() {
-                    	
-//                        // Make modifications to the model here
-//                		TaskConfig metaData = (TaskConfig) findExtensionAttributeValue((BaseElement)bebe, METADATA_FEATURE);
-//                		
-//                		Task myTask = (Task) bebe;
-//                		//TypeAlgorithme algorithm = (TypeAlgorithme) findExtensionAttributeValue((BaseElement)be, MyModelPackage.eINSTANCE.getTaskConfig_Algorithm());
-//
-//                		
-//                		SelectableComboFieldEditor nameEditor = null;
-//                		// Fetch all TaskConfig extension objects from the Task
-//                		List<TaskConfig> allTaskConfigs = ModelDecorator.getAllExtensionAttributeValues(myTask, TaskConfig.class);
-//                		taskConfig = allTaskConfigs.get(0);
-                		
-                		taskConfig.setAlgorithmNameStr(combo.getText()+"_"+algorithmCombo.getSelectionIndex());
-                		
-                		//bindAttribute(taskConfig, MyModelPackage.eINSTANCE.getTaskConfig_AlgorithmNameStr());
-                    }
-                });
-
                 
+            	try {
+            		Combo combo = (Combo) e.widget;
+            		 
+            		ConsevedChoice = combo.getText()+"_"+algorithmCombo.getSelectionIndex();
 
+            	} catch ( Exception ex) {
+            		
+            	}
+  
             }
 
             @Override
@@ -166,7 +159,7 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
 		Task myTask = (Task) be;
 		//TypeAlgorithme algorithm = (TypeAlgorithme) findExtensionAttributeValue((BaseElement)be, MyModelPackage.eINSTANCE.getTaskConfig_Algorithm());
 
-		
+		TaskConfig taskConfig=null;
 		SelectableComboFieldEditor nameEditor = null;
 		// Fetch all TaskConfig extension objects from the Task
 		List<TaskConfig> allTaskConfigs = ModelDecorator.getAllExtensionAttributeValues(myTask, TaskConfig.class);
@@ -175,6 +168,7 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
 			// which is required by the Property Sheet UI.
 			taskConfig = MyModelFactory.eINSTANCE.createTaskConfig();
 			taskConfig.setAlgorithmNameStr(algorithmCombo.getText()+"_"+0);
+			ConsevedChoice=algorithmCombo.getText()+"_"+0; 
 			TargetRuntime rt = getTargetRuntime();
 			// We need our CustomTaskDescriptor for this Task. The ID must match
 			// the one defined in the <customTask> extension point in plugin.xml
@@ -204,10 +198,24 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
 //		
 //		taskConfig.setAlgorithmNameStr(algorithmValue);
 //		
-//		bindAttribute(taskConfig, MyModelPackage.eINSTANCE.getTaskConfig_AlgorithmNameStr());
 
-		String[] splitedValues = taskConfig.getAlgorithmNameStr().split("_");
+
+		
+//		algorithmCombo.select(combo.getSelectionIndex());
+		
+		String[] splitedValues = ConsevedChoice.split("_");
         // Set a default value for the combo box
 		algorithmCombo.select(Integer.parseInt(splitedValues[splitedValues.length-1]));
+		
+ 		//taskConfig.setAlgorithmNameStr(algorithmCombo.getText()+"_"+algorithmCombo.getSelectionIndex());
+
+ 		
+ 		//bindAttribute(taskConfig, MyModelPackage.eINSTANCE.getTaskConfig_AlgorithmNameStr());
+
+
+    	} catch ( Exception ex) {
+    		
+    	}
+    	
     }
 }
