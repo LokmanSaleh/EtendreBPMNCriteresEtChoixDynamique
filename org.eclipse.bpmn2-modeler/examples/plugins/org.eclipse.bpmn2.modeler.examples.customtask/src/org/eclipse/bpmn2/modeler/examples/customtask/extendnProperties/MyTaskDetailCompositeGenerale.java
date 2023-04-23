@@ -15,6 +15,8 @@ package org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties;
 
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -56,9 +58,17 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
  
 public class MyTaskDetailCompositeGenerale extends DefaultDetailComposite {
+
+	public static List<Combo> ListDeCritereValue = new ArrayList();
+	public static List<String> ListDeCritereName = new ArrayList();
 
 	final static EClass METADATA_CLASS = MyModelPackage.eINSTANCE.getTaskConfig();
 	final static EStructuralFeature METADATA_FEATURE = MyModelPackage.eINSTANCE.getDocumentRoot_TaskConfig();
@@ -73,8 +83,92 @@ public class MyTaskDetailCompositeGenerale extends DefaultDetailComposite {
 		super(parent, style);
 	}
 
-	@Override
-	public void createBindings(EObject be) {
+	
+    @Override
+    public void createBindings(EObject be) {
+    	
+ 
+        //super.createBindings(be);
+        //bebe=be;
+        // Create a label and a combo box for selecting an algorithm
+    	
+    	// une nouvelle liste 
+    	ListDeCritereValue = new ArrayList();
+
+          
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\data.txt"))) {
+        	
+            String line;
+            
+            while ((line = br.readLine()) != null) {
+            	
+                 String[] partsOfLine = line.split(";");
+                
+                //for (String part : parts) {
+                	
+                	// TODO : is better to comme from the MlTemplate model, but there is an error when we call the template 
+                	if (partsOfLine[0].equals("SelectionCriteria")) {
+                		
+                        createLabel(this, partsOfLine[1]);
+                        Combo critereCombo = new Combo(this, SWT.READ_ONLY | SWT.DROP_DOWN);
+                        
+                        // Ajouter le combo dans la liste 
+                        ListDeCritereValue.add(critereCombo); 
+                        ListDeCritereName.add(partsOfLine[1]);
+                        
+                        critereCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1)); 
+                        
+                        for(int i= 2; i<partsOfLine.length; i++) {
+                    		critereCombo.add(partsOfLine[i]); 
+                        }
+                        
+                        // Add a selection listener to the combo box
+						critereCombo.addSelectionListener(new SelectionListener() {
+							
+							@Override
+							public void widgetSelected(SelectionEvent e) {
+
+								try {
+
+									File file = new File("C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\criteria.txt");
+									FileWriter fw = new FileWriter(file);
+									BufferedWriter bw = new BufferedWriter(fw);
+
+									for (int i = 0; i < ListDeCritereName.size(); i++) {
+										bw.write(ListDeCritereName.get(i) + ";" + ListDeCritereValue.get(i).getText() + ";");
+									}
+									
+									bw.write("\n");
+									bw.close();
+
+								} catch (IOException e1) {
+
+									e1.printStackTrace();
+								}
+
+							}
+
+                            @Override
+                            public void widgetDefaultSelected(SelectionEvent e) {
+                                // Do nothing
+                            }
+                        });
+                	}
+                		
+                    
+                //}
+            }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
+    }
+	
+	
+	
+	//@Override
+	public void createBindingsx(EObject be) {
 		
 		TaskConfig metaData = (TaskConfig) findExtensionAttributeValue((BaseElement)be, METADATA_FEATURE);
 		//Criterias Criterias = (Criterias) findExtensionAttributeValue((BaseElement)be, MyModelPackage.eINSTANCE.getTaskConfig_Criterias());

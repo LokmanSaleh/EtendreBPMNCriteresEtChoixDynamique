@@ -82,12 +82,41 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
 		return null;
 	}
 	
+	public List<Item> GetCriteriaWithSelectedValue () {   
+        
+		List<Item> listCritere = new ArrayList<>();
+		
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\criteria.txt"))) {
+        	
+            String line;
+            
+            while ((line = br.readLine()) != null) {
+            	
+                 String[] partsOfLine = line.split(";");
+                  
+            		for (int i= 0;i<partsOfLine.length;) {
+            			
+            			listCritere.add(new Item(partsOfLine[i], partsOfLine[i+1]));
+            			i++;i++;
+            			
+            		} 
+            		
+            }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return listCritere;
+	}
+	
     @Override
     public void createBindings(EObject be) {
     	
 
     	try {
-    		
+    	List<Item> listCritereValue = GetCriteriaWithSelectedValue();
+
     		
         super.createBindings(be);
         //bebe=be;
@@ -103,13 +132,31 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
             
             while ((line = br.readLine()) != null) {
             	
-                 String[] parts = line.split(";");
-                
-                for (String part : parts) {
-                	
-                	algorithmCombo.add(part);
+                 String[] partsOfLine = line.split(";"); 
+                 
+                	// TODO : is better to comme from the MlTemplate model, but there is an error when we call the template 
+                	if (partsOfLine[0].equals("ModelConstruction")) {
+                		
+                		Boolean GetThisAlgorithm = true;
+
+                		for (int i= 2;i<partsOfLine.length;i++) {
+                			
+                			for (Item item : listCritereValue) {
+                				
+                				if(partsOfLine[i].equals(item.getCritere()) && !partsOfLine[i+1].equals(item.getValue())) {
+                					GetThisAlgorithm = false; 
+                				}
+                			}
+                			
+                		}
+                		
+                		
+                		if (GetThisAlgorithm) algorithmCombo.add(partsOfLine[1]);
+                		
+                	}
+                		
                     
-                }
+                //}
             }
             
         } catch (IOException e) {
