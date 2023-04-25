@@ -102,6 +102,10 @@
 			type="Task">
 			<property name="type" value="MyTask" />
 			<property name="taskConfig" label="Task Configuration" type="TaskConfig"/>
+   <property
+         name="name"
+         value="Construire un modèle">
+   </property>
 <!--   <property-->
 <!--         label="Selectable Combo Field Editor"-->
 <!--         name="selectableComboFieldEditor"-->
@@ -136,6 +140,10 @@
 			type="Task">
 			<property name="type" value="SeparateData" />
 			<property name="taskConfig" label="Task Configuration" type="TaskConfig"/>
+   <property
+         name="name"
+         value="Séparez les données">
+   </property>
 		</customTask> 
 		<propertyTab
 			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.separateData"
