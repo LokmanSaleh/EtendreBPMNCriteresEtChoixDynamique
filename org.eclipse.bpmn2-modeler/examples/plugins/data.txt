@@ -1,4 +1,7 @@
 ModelConstruction;NaiveBayes;Accuracy;High;Explaination;No
 ModelConstruction;DecisionTree;Accuracy;Middle;Explaination;Yes
-SelectionCriteria;Accuracy;Middle;Low;High
-SelectionCriteria;Explanation;Yes;No
+DataSeparation;SeparateDataForTwoPart;Explaination;No;Accuracy;Low
+SelectionCriteria;Accuracy;Low;Middle;High
+SelectionCriteria;ComputationalTime;Fast;Low
+SelectionCriteria;Explaination;Yes;No
+SelectionCriteria;MissingValue;Yes;No

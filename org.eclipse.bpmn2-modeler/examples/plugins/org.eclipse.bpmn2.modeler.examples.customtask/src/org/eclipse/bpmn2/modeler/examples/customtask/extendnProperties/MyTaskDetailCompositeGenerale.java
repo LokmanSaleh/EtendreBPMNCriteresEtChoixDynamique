@@ -94,6 +94,7 @@ public class MyTaskDetailCompositeGenerale extends DefaultDetailComposite {
     	
     	// une nouvelle liste 
     	ListDeCritereValue = new ArrayList();
+    	ListDeCritereName = new ArrayList();
 
           
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\data.txt"))) {

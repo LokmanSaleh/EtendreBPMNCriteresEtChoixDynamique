@@ -30,6 +30,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import org.eclipse.bpmn2.BaseElement;
 import org.eclipse.bpmn2.Task;
 import org.eclipse.bpmn2.modeler.core.merrimac.clad.AbstractBpmn2PropertySection;
 import org.eclipse.bpmn2.modeler.core.merrimac.clad.DefaultDetailComposite;
@@ -41,6 +42,7 @@ import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.MyModelPackage;
 import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.SeperateData;
 import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TaskConfig;
 import org.eclipse.bpmn2.modeler.examples.customtask.MyModel.TypeAlgorithme;
+import org.eclipse.bpmn2.modeler.ui.preferences.SelectableComboFieldEditor;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EEnum;
@@ -49,12 +51,20 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 
 import resources.Criteria;
  
 public class MyTaskDetailCompositeSeparateData extends DefaultDetailComposite {
 
+    private static Combo algorithmCombo;   
+    private static String ConsevedChoice;
+   
 	public MyTaskDetailCompositeSeparateData(AbstractBpmn2PropertySection section) {
 		super(section);
 	}
@@ -63,8 +73,140 @@ public class MyTaskDetailCompositeSeparateData extends DefaultDetailComposite {
 		super(parent, style);
 	}
 
+	public List<Item> GetCriteriaWithSelectedValue() {
+
+		List<Item> listCritere = new ArrayList<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(
+				"C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\criteria.txt"))) {
+
+			String line;
+
+			while ((line = br.readLine()) != null) {
+
+				String[] partsOfLine = line.split(";");
+
+				for (int i = 0; i < partsOfLine.length;) {
+
+					listCritere.add(new Item(partsOfLine[i], partsOfLine[i + 1]));
+					i++;
+					i++;
+
+				}
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return listCritere;
+	}
+
 	@Override
 	public void createBindings(EObject be) {
+
+		try {
+			List<Item> listCritereValue = GetCriteriaWithSelectedValue();
+
+			super.createBindings(be);
+			// bebe=be;
+			// Create a label and a combo box for selecting an algorithm
+
+			createLabel(this, "Select algorithm:");
+			algorithmCombo = new Combo(this, SWT.READ_ONLY | SWT.DROP_DOWN);
+			algorithmCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
+
+			try (BufferedReader br = new BufferedReader(new FileReader(
+					"C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\data.txt"))) {
+
+				String line;
+
+				while ((line = br.readLine()) != null) {
+
+					String[] partsOfLine = line.split(";");
+
+					// TODO : is better to comme from the MlTemplate model, but there is an error
+					// when we call the template
+					if (partsOfLine[0].equals("DataSeparation")) {
+
+						Boolean GetThisAlgorithm = true;
+
+						for (int i = 2; i < partsOfLine.length; i++) {
+
+							for (Item item : listCritereValue) {
+
+								if (partsOfLine[i].equals(item.getCritere()) && !partsOfLine[i + 1].equals(item.getValue())) {
+									GetThisAlgorithm = false;
+								}
+							}
+
+						}
+
+						if (GetThisAlgorithm)
+							algorithmCombo.add(partsOfLine[1]);
+
+					}
+
+					// }
+				}
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			// Add items to the combo box
+			algorithmCombo.add("Algorithm1");
+			algorithmCombo.add("Algorithm2");
+			algorithmCombo.add("Algorithm3");
+
+			// Add a selection listener to the combo box
+			algorithmCombo.addSelectionListener(new SelectionListener() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					// TODO: handle algorithm selection
+
+					try {
+						Combo combo = (Combo) e.widget;
+
+						ConsevedChoice = combo.getText() + "_" + algorithmCombo.getSelectionIndex();
+
+					} catch (Exception ex) {
+
+					}
+
+				}
+
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					// Do nothing
+				}
+			});
+
+			String[] splitedValues = ConsevedChoice.split("_");
+
+			// Set a default value for the combo box
+			algorithmCombo.select(Integer.parseInt(splitedValues[splitedValues.length - 1]));
+
+		} catch (Exception ex) {
+
+		}
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//@Override
+	public void createBindingsX(EObject be) {
 		// This must be a Task because this Property Tab is only active for Tasks.
 		// The Property Tab will only display the Parameter list in our TaskConfig
 		// model element (see the definition of this element in MyModel.ecore).
