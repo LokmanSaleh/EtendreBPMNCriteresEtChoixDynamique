@@ -31,7 +31,7 @@
 
 
 		<customTask
-			category="My Tools"
+			category="Machine Learning Components"
 			description="This is a Custom Boundary Event that has been extended with a simple boolean flag."
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.MyBoundaryEventFeatureContainer"
 			icon="MyBoundaryEvent.png"
@@ -45,7 +45,7 @@
 		</customTask>
 
 		<customTask
-			category="My Tools"
+			category="Machine Learning Components"
 			description="This is a Custom Event Definition that has been extended with a simple string field."
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.MyEventDefinitionFeatureContainer"
 			icon="MyEventDefinition.png"
@@ -71,7 +71,7 @@
 
 		<!-- This CustomTask defines a Start Event containing a MessageEventDefinition -->
 		<customTask
-			category="My Tools"
+			category="Machine Learning Components"
 			description="Message Start Event"
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.MessageStartEventFeatureContainer"
 			id="org.eclipse.bpmn2.modeler.examples.customtask.messageStartEvent"
@@ -91,7 +91,7 @@
 
 
 		<customTask
-			category="My Tools"
+			category="Machine Learning Components"
 			description="This is a Custom Task that has been extended with runtime-specific configuration parameters. These parameters are defined in the &quot;My Task&quot; Property Tab"
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskFeatureContainer"
 			icon="MyTask.png"
@@ -129,7 +129,7 @@
 		
 		
 		<customTask
-			category="My Tools"
+			category="Machine Learning Components"
 			description="This is a Custom Task that has been extended with runtime-specific configuration parameters. These parameters are defined in the &quot;My Task&quot; Property Tab"
 			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.MyTaskFeatureContainerSeparateData"
 			icon="MyTask.png"
@@ -152,6 +152,42 @@
 			type="org.eclipse.bpmn2.Task"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">
 		</propertyTab>
+		
+		
+		
+		
+		
+		
+		
+		<customTask
+			category="Machine Learning Components"
+			description="This is a Custom Task that has been extended with runtime-specific configuration parameters. These parameters are defined in the &quot;My Task&quot; Property Tab"
+			featureContainer="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.dataPreprocessing.MyTaskFeatureContainerDataPreProcessing"
+			icon="MyTask.png"
+			id="org.eclipse.bpmn2.modeler.examples.customtask.customTask1.DataPreProcessing"
+			name="Pre-Traitement de données"
+			propertyTabs="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.DataPreProcessing"
+			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime"
+			type="Task">
+			<property name="type" value="SeparateData" />
+			<property name="taskConfig" label="Task Configuration" type="TaskConfig"/>
+   <property
+         name="name"
+         value="Pre-Traitement de données">
+   </property>
+		</customTask> 
+		<propertyTab
+			id="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.DataPreProcessing"
+			class="org.eclipse.bpmn2.modeler.examples.customtask.extendnProperties.dataPreprocessing.MyTaskPropertySectionDataPreProcessing"
+			label="Choisissez algo pour pre-Traitement de données"
+			type="org.eclipse.bpmn2.Task"
+			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime">
+		</propertyTab>
+		
+		
+		
+		
+		
 		
 		
 		
