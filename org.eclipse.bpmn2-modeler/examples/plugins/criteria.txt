@@ -1,1 +1,1 @@
-Accuracy;Middle;ComputationalTime;Low;Explaination;Yes;MissingValue;No;
+Accuracy;Low;ComputationalTime;Fast;Explaination;No;MissingValue;Yes;
