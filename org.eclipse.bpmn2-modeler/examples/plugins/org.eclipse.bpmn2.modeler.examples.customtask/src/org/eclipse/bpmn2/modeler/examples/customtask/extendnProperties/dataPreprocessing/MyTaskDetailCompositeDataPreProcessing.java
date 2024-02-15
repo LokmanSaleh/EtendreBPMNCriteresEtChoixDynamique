@@ -159,6 +159,7 @@ public class MyTaskDetailCompositeDataPreProcessing extends DefaultDetailComposi
 			algorithmCombo.add("Algorithm1");
 			algorithmCombo.add("Algorithm2");
 			algorithmCombo.add("Algorithm3");
+			algorithmCombo.add("Algorithm4");
 
 			// Add a selection listener to the combo box
 			algorithmCombo.addSelectionListener(new SelectionListener() {

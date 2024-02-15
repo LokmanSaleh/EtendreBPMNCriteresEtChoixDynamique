@@ -144,7 +144,7 @@ public class MyTaskDetailCompositetest extends DefaultDetailComposite {
                 			for (Item item : listCritereValue) {
                 				
                 				if(partsOfLine[i].equals(item.getCritere()) && !partsOfLine[i+1].equals(item.getValue())) {
-                					GetThisAlgorithm = false; 
+                					GetThisAlgorithm = true; 
                 				}
                 			}
                 			

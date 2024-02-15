@@ -96,7 +96,7 @@ public class MyTaskDetailCompositeGenerale extends DefaultDetailComposite {
     	ListDeCritereValue = new ArrayList();
     	ListDeCritereName = new ArrayList();
 
-          
+    	
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\lookm\\git\\EtendreBPMNCriteresEtChoixDynamique\\org.eclipse.bpmn2-modeler\\examples\\plugins\\data.txt"))) {
         	
             String line;
@@ -108,7 +108,7 @@ public class MyTaskDetailCompositeGenerale extends DefaultDetailComposite {
                 //for (String part : parts) {
                 	
                 	// TODO : is better to comme from the MlTemplate model, but there is an error when we call the template 
-                	if (partsOfLine[0].equals("SelectionCriteria")) {
+                	if (partsOfLine[0].equals("ModelConstruction")) {
                 		
                         createLabel(this, partsOfLine[1]);
                         Combo critereCombo = new Combo(this, SWT.READ_ONLY | SWT.DROP_DOWN);

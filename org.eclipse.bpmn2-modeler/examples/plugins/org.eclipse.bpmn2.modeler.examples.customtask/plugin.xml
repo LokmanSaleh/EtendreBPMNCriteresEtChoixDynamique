@@ -169,7 +169,7 @@
 			propertyTabs="org.eclipse.bpmn2.modeler.examples.customtask.mytask.tab.DataPreProcessing"
 			runtimeId="org.eclipse.bpmn2.modeler.examples.customtask.runtime"
 			type="Task">
-			<property name="type" value="SeparateData" />
+			<property name="type" value="DataPreProcessing" />
 			<property name="taskConfig" label="Task Configuration" type="TaskConfig"/>
    <property
          name="name"
